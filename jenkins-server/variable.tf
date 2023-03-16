@@ -4,8 +4,6 @@
 
 variable "region" {}
 variable "ami" {}
-variable "ami_type" {}
-variable "instance_type" {}
 variable "ec2_instance_type" {}
 variable "key_name" {}
 variable "key_path" {}

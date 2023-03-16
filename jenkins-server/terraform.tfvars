@@ -4,8 +4,6 @@
 
 region                     = "us-east-1"
 ami                        = "ami-09cd747c78a9add63"
-ami_type                   = "AL2_x86_64"
-instance_type              = "t3.large"
 ec2_instance_type          = "t3.medium"
 key_name                   = "jenkins-server"
 key_path                   = "/home/ibechuks/Downloads/jenkins-server.pem"

@@ -16,8 +16,8 @@ module "eks" {
   eks_managed_node_groups = {
     dev = {
       desired_capacity = 2
-      max_capacity     = 2
-      min_capacity     = 2
+      max_capacity     = 3
+      min_capacity     = 1
 
       instance_types = [var.instance_type]
     }
