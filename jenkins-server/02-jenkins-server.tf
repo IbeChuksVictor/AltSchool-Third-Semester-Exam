@@ -1,5 +1,30 @@
+resource "aws_default_vpc" "default_vpc" {
+  
+  tags = {
+    Name = "default_vpc"
+  }
+}
+
 #----------------------------------------------------
-#                    Jenkins Server
+#                 Avalablility zones
+#----------------------------------------------------
+
+data "aws_availability_zones" "available_zones" {}
+  
+#----------------------------------------------------
+#                       subnet
+#----------------------------------------------------
+
+resource "aws_default_subnet" "default_az1" {
+  availability_zone = data.aws_availability_zones.available_zones.names[0]
+
+  tags   = {
+    Name = "default subnet"
+  }
+}
+
+#----------------------------------------------------
+#                   Jenkins Server
 #----------------------------------------------------
 
 module "jenkins-instance" {
@@ -8,13 +33,13 @@ module "jenkins-instance" {
 
   name                   = "jenkins-ec2-instance"
   ami                    = var.ami
-  subnet_id              = module.EKS-vpc.public_subnets[0]
+  subnet_id              = aws_default_subnet.default_az1.id
   instance_type          = var.ec2_instance_type
   key_name               = var.key_name
   vpc_security_group_ids = [aws_security_group.jenkins_security_group.id]
 
   tags = {
-    Name = "jenkins-ec2-instance"
+    Name = "jenkins-server"
   }
 }
 
@@ -25,7 +50,7 @@ module "jenkins-instance" {
 resource "aws_security_group" "jenkins_security_group" {
   name        = "jenkins-server security group"
   description = "allow access on ports 8080 and 22"
-  vpc_id      = module.EKS-vpc.vpc_id
+  vpc_id      = aws_default_vpc.default_vpc.id
 
   # allow access on port 8080
   ingress {

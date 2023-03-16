@@ -10,7 +10,7 @@ terraform {
 
   backend "s3" {
     bucket         = "exam-state-altschool-03"
-    key            = "Exam/terraform.tfstate"
+    key            = "cluster/terraform.tfstate"
     region         = "us-east-1"
     dynamodb_table = "Exam_State_Lock"
     encrypt        = true
