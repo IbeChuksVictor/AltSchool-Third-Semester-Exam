@@ -9,7 +9,6 @@ variable "public_subnet_cidr_blocks" {}
 variable "private_subnet_cidr_blocks" {}
 variable "ami_type" {}
 variable "instance_type" {}
-variable "ec2_instance_type" {}
 variable "cluster_name" {}
 variable "cluster_version" {}
 variable "domain-name" {}
