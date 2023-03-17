@@ -4,7 +4,7 @@
 
 data "aws_availability_zones" "azs" {}
 
-module "EKS-vpc" {
+module "AltSchool-Exam-EKS-vpc" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "3.19.0"
 

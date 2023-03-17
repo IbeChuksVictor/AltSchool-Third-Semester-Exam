@@ -2,7 +2,7 @@
 #                     EKS Cluster
 #----------------------------------------------------
 
-module "eks" {
+module "AltSchool-Exam-eks" {
   source  = "terraform-aws-modules/eks/aws"
   version = "19.10.0"
 
@@ -10,8 +10,8 @@ module "eks" {
   cluster_version                = var.cluster_version
   cluster_endpoint_public_access = true
 
-  subnet_ids = module.EKS-vpc.public_subnets
-  vpc_id     = module.EKS-vpc.vpc_id
+  subnet_ids = module.AltSchool-Exam-EKS-vpc.public_subnets
+  vpc_id     = module.AltSchool-Exam-EKS-vpc.vpc_id
 
   eks_managed_node_groups = {
     dev = {
