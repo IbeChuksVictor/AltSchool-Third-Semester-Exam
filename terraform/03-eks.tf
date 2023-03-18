@@ -15,9 +15,9 @@ module "AltSchool-Exam-EKS" {
 
   eks_managed_node_groups = {
     dev = {
-      desired_capacity = 2
-      max_capacity     = 3
-      min_capacity     = 1
+      desired_capacity = 4
+      max_capacity     = 5
+      min_capacity     = 3
 
       instance_types = [var.instance_type]
     }
