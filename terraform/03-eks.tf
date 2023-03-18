@@ -2,7 +2,7 @@
 #                     EKS Cluster
 #----------------------------------------------------
 
-module "AltSchool-Exam-eks" {
+module "AltSchool-Exam-EKS" {
   source  = "terraform-aws-modules/eks/aws"
   version = "19.10.0"
 
