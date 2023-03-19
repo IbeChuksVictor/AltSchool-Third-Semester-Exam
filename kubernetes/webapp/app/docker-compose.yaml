@@ -1,11 +1,13 @@
 version: "3.8" 
-services: 
+services:
   webapp: 
-    build: 
-      context: "./webapp"
-
-      dockerfile: Dockerfile
-  
+    container_name: portfolio-demo
+    image: ibechuks/portfolio-demo
+    ports: 
+      - 8080:8080
+    depends_on: 
+      - database
+     
   database: 
     container_name: postgres
     image: postgres:12.2-alpine
