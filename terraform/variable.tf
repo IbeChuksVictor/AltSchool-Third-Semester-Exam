@@ -12,6 +12,5 @@ variable "instance_type" {}
 variable "cluster_name" {}
 variable "cluster_version" {}
 variable "domain-name" {}
-variable "sub_domain_name" {}
 # variable "token" {}
 # variable "username" {}  
