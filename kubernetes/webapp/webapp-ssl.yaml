@@ -15,7 +15,7 @@ spec:
     - webapp.ibechuksvictor.live
     secretName: webapp-tls
   rules:
-  - host: webapp.eaaladejana.live
+  - host: webapp.ibechuksvictor.live
     http:
       paths:
       - path: /
