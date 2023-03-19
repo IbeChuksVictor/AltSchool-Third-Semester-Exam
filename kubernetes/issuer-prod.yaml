@@ -22,5 +22,5 @@ spec:
           hostedZoneID: Z013813133DKFUR5EHKQS
           accessKeyID: AKIAWV45VMUBL4W5DMMX
           secretAccessKeySecretRef:
-            name: route53-secret
+            name: secret-route53
             key: secret-access-key

@@ -9,6 +9,15 @@ resource "helm_release" "nginx-ingress-controller" {
   }
 }
 
+data "kubernetes_service" "EKS-ingress-service" {
+  metadata {
+    name = "nginx-ingress-controller"
+  }
+  depends_on = [
+    helm_release.nginx-ingress-controller
+  ]
+}
+
 resource "helm_release" "kube-prometheus-stack" {
   name       = "kube-prometheus-stack"
   repository = "https://prometheus-community.github.io/helm-charts"
