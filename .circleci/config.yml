@@ -47,8 +47,8 @@ jobs:
             sudo apt update
             sudo apt install docker.io -y
             cd ./kubernetes/webapp/app
-            docker build -t $DOCKER_IMAGE
-            docker login --username $DOCKER_USERNAME -password-p $DOCKER_PASSWORD
+            docker build -t $DOCKER_IMAGE .
+            docker login --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
             docker push $DOCKER_IMAGE
   create-and-run-eks-cluster:
     docker:
